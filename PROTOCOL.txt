@@ -1,0 +1,53 @@
+Protocol fixed before the reported experiments, 3 November 2026.
+This is an internal analysis protocol, not an external preregistration.
+
+Question: exact evaluation of quadratic portfolio risk over a one-edge exchange
+neighbourhood of a Gaussian correlation tree, and its use in robust allocation.
+No confidence-coverage claim is attached to this deterministic stress set.
+
+Theory: tree path-product covariance; exchange factorization; batch path oracle;
+rank-four perturbation; convex allocation with a computable tangent lower bound.
+All mathematical claims will have complete proofs and independent numerical checks.
+
+Verification: compare every exchange against independently constructed dense
+covariances, including signed and zero edge correlations and signed exposures;
+compare constraint generation against a full-scenario convex problem.
+
+Performance: compare path oracle with per-candidate linear-time tree messages,
+not only dense covariance reconstruction. Trees: star, balanced binary, path,
+and random recursive. Report preprocessing and query costs separately.
+
+Simulation: fixed random seeds; stationary Gaussian tree, Student t tree,
+one-exchange perturbation, and misspecified factor covariance; n=12 and 30;
+training length 126; 100 independent replications per setting. Report paired
+population risk and stress risk, turnover and uncertainty, without choosing
+settings or hyperparameters for favourable results.
+
+Empirical illustration: Kenneth French daily value-weighted 10 and 30 industry
+portfolios. Estimation 252 trading days; monthly rebalancing; 2000-2025 intended
+evaluation, limited to complete calendar years actually in the downloaded file.
+These overlapping US industry panels are NOT independent datasets, and the
+portfolios are research return series, NOT directly tradeable instruments.
+Costs are illustrative allocation-layer costs, excluding within-industry trading.
+No survivorship-free investable strategy or implementable net alpha is claimed.
+All methods use identical information and cost accounting.
+
+Methods: equal weight; HRP; Ledoit-Wolf minimum variance; one tree; local robust
+tree. All optimization-based models use the same long-only simplex, gamma=5,
+21-day risk horizon, and proportional costs. Main per-side cost 10 basis points;
+sensitivity 0 and 25 bps. No fitted return forecasts.
+Gaussian Chow-Liu score built from a Ledoit-Wolf correlation estimate.
+Main stress neighbourhood: every single feasible edge exchange; include reference.
+Likelihood-filter sensitivity may be added and reported without changing main case.
+
+Outputs: exact algorithm verification; running time; solver gap and iterations;
+annualized volatility, annualized gross/net mean, wealth drawdown, two-way
+traded fraction, gross/net growth and zero-benchmark return/volatility ratio.
+Do not label the latter an excess-return Sharpe ratio.
+Inference: paired block bootstrap with 63-day blocks, 999 replicates; emphasis
+on differences in volatility and net return, no selecting the best cost scenario.
+
+Limitations retained even for favourable results: local (one exchange) ambiguity,
+Gaussian-tree covariance misspecification, dependence of estimated scenarios,
+floating-point rather than interval-verified bounds, stylized empirical costs,
+single-country/overlapping datasets, and no universal outperformance guarantee.

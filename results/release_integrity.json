@@ -1,0 +1,31 @@
+{
+  "simulation_samples": 800,
+  "simulation_method_rows": 4000,
+  "simulation_fits": 2400,
+  "max_simulation_gap_scaled": 1.995102726359832e-07,
+  "panels": [
+    {
+      "assets": 10,
+      "daily_observations": 6539,
+      "rebalances": 312,
+      "method_cost_series": 15,
+      "optimization_fits": 2808,
+      "max_gap_scaled": 1.96978359096045e-07,
+      "ledger_max_gross_error": 9.996344030316351e-17,
+      "ledger_max_net_error": 6.366435156834882e-16,
+      "ledger_max_fee_error": 5.313132746265214e-16
+    },
+    {
+      "assets": 30,
+      "daily_observations": 6539,
+      "rebalances": 312,
+      "method_cost_series": 15,
+      "optimization_fits": 2808,
+      "max_gap_scaled": 1.9868780953835602e-07,
+      "ledger_max_gross_error": 9.999054535747565e-17,
+      "ledger_max_net_error": 6.166941957097549e-16,
+      "ledger_max_fee_error": 5.358398186966484e-16
+    }
+  ],
+  "status": "PASS"
+}

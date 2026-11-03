@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite this computational companion when using its code or recorded results."
+type: software
+title: "Local topology stress in tree-based portfolios: computational companion"
+authors:
+  - family-names: "Gałązka"
+    given-names: "Marek"
+  - family-names: "Wdowicka"
+    given-names: "Hanna"
+repository-code: "https://github.com/mgalazka84/local-topology-portfolio-stress"
+date-released: 2026-11-03

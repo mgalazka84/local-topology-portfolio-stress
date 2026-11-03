@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+data/*_original.zip
+data/industry_*.csv
+figures/
+manuscript/
