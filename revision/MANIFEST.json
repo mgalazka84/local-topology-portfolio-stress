@@ -1,11 +1,11 @@
 {
   "README.md": {
-    "bytes": 4139,
-    "sha256": "f856674b08edf1513ff5a27cdbd363243702623e92c7d0def4f166e14fa9e5b1"
+    "bytes": 4343,
+    "sha256": "03442288cbecc4f39b7ebd215521bddbd41bfbc4d9e5c2acd876f5b371cdf712"
   },
   "REPRODUCIBILITY.txt": {
-    "bytes": 1284,
-    "sha256": "f308cd57055a9ddcb71baf2798b14d5fb96dc3b53830c671824396bf4f370de2"
+    "bytes": 1365,
+    "sha256": "0ee3b216922ae512769f3a718dc25b1d0faf515d1e59cc9723610c87dabc2848"
   },
   "VERSION": {
     "bytes": 6,
@@ -14,6 +14,10 @@
   "data/archived_provenance.json": {
     "bytes": 5770,
     "sha256": "932886903196b4ad001f0f1349047febbed6d4cf8c9322b93c2186112ceafcaf"
+  },
+  "full_results.zip": {
+    "bytes": 23103343,
+    "sha256": "c1516c979e6bba92cd70c84f9976310db19fa2a3037bc3ac1b9dd52ec10a2515"
   },
   "requirements.txt": {
     "bytes": 150,
