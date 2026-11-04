@@ -1,0 +1,21 @@
+Version: 0.2.0
+Revision date: 2026-11-04
+Authors: Marek Galazka and Hanna Wdowicka
+Repository: https://github.com/mgalazka84/local-topology-portfolio-stress
+Original snapshot: 621731f62a1f155bea1614418674dbcaf10d01f0
+
+Revised release: revision/ directory plus its full_results.zip.
+The manuscript and submission bundle identify the exact containing commit.
+No archival DOI has been assigned.
+
+Main evidence:
+- O(n+L) direct query compared to O(nK+L) cut rerooting.
+- 44 controlled timing instances, four tree shapes; complete n<=256, sparse n<=512.
+- 500 independent samples x eight simulation settings, both zero and 10 bps costs.
+- 18 historical panel/configuration combinations; 10, 30 and 49 industries, 2000-2025.
+- 53,472 allocations and 77,245 restricted Clarabel calls; all independently evaluated global gaps <=2e-7.
+- 431,574 historical ledger rows replayed independently.
+- Primary time-series inference: 1,999 circular-block replicates, 63-day blocks, Holm family of 12 tests.
+
+See README.md, results/environment.json, data/archived_provenance.json,
+results/revision_integrity.json and results/solver_status_counts.json.

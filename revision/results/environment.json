@@ -1,0 +1,24 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "clarabel": "0.11.1",
+    "matplotlib": "3.10.8"
+  },
+  "experiment_threads": 1,
+  "simulations": 4000,
+  "simulation_costs": [
+    0,
+    0.001
+  ],
+  "conic_tolerances": [
+    1e-09,
+    1e-11,
+    1e-13
+  ],
+  "global_scaled_gap_tolerance": 2e-07
+}

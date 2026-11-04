@@ -1,0 +1,3 @@
+source,allocations,master_calls,non_success_allocations,non_success_calls,lp_non_success_calls,lp_unresolved_calls,max_gap_scaled,max_scenarios
+history,17472,25830,2999,3750,130,0,1.36533120365101e-07,11
+simulation,36000,51415,1197,1387,0,0,1.5865154054384156e-07,10

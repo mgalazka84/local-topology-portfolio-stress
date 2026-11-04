@@ -1,0 +1,46 @@
+{
+  "solvers": [
+    {
+      "source": "history",
+      "allocations": 17472,
+      "master_calls": 25830,
+      "non_success_allocations": 2999,
+      "non_success_calls": 3750,
+      "lp_non_success_calls": 130,
+      "lp_unresolved_calls": 0,
+      "max_gap_scaled": 1.36533120365101e-07,
+      "max_scenarios": 11
+    },
+    {
+      "source": "simulation",
+      "allocations": 36000,
+      "master_calls": 51415,
+      "non_success_allocations": 1197,
+      "non_success_calls": 1387,
+      "lp_non_success_calls": 0,
+      "lp_unresolved_calls": 0,
+      "max_gap_scaled": 1.5865154054384156e-07,
+      "max_scenarios": 10
+    }
+  ],
+  "statuses": {
+    "history": {
+      "Solved": 22080,
+      "AlmostSolved": 3597,
+      "InsufficientProgress": 152,
+      "NumericalError": 1
+    },
+    "simulation": {
+      "Solved": 50028,
+      "AlmostSolved": 1387
+    }
+  },
+  "benchmark_dense_ratio_range": {
+    "min": 0.3318256946626258,
+    "max": 0.7849036804076559
+  },
+  "benchmark_sparse_512_ratio_range": {
+    "min": 29.883951425573272,
+    "max": 94.04541601380012
+  }
+}

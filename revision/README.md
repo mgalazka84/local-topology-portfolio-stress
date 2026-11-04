@@ -1,0 +1,43 @@
+# Local topology stress: revision 0.2.0 (4 November 2026)
+
+This release implements the supplied major-revision assessment. It preserves the negative findings: cut rerooting is faster on all tested complete graphs; the path oracle wins on the tested sparse 4-NN graphs. Robust allocation has higher volatility than linear shrinkage in all reported historical specifications.
+
+## Reproduce the revised study
+
+Run commands from this `revision` directory. The original 3 November release remains in the repository root and is pinned at commit 621731f62a1f155bea1614418674dbcaf10d01f0.
+
+```bash
+python -m pip install -r requirements.txt
+python -m zipfile -e full_results.zip .
+export OPENBLAS_NUM_THREADS=1
+export OMP_NUM_THREADS=1
+python src/download_data.py
+python src/verify.py
+python src/revision_benchmark.py
+python src/run_revision.py
+python src/revision_inference.py
+python src/revision_report.py
+python src/revision_integrity.py
+python src/revision_solver_audit.py
+```
+
+Run timing separately from other numerical jobs. `run_revision.py` uses four independent processes, each with one BLAS/OpenMP thread. It records every job status; any nonzero exit is a failure, not an omitted replication. `--retry` reruns only failed jobs. Seeds are indexed by asset count, setting and replication.
+
+`full_results.zip` contains replication-level simulations, all historical daily strategy ledgers and holdings, every solver record, summaries and verification outputs. It contains no original third-party return files. The aggregate `results/simulation.csv` is reconstructed from the eight `sim_n_setting.csv` files by `revision_report.py`. Inspect or regenerate the results without downloading source data using `revision_report.py`; full recomputation and independent ledger replay require source data.
+
+The data download scripts obtain French's 10/30/49 industry and daily risk-free files. This study uses the archived November 2026 hashes in `data/archived_provenance.json`. Newer French downloads can revise history: the download date alone is not a point-in-time data guarantee. Raw downloaded source files are not redistributed here. Cost accounting concerns only allocation across research industry series.
+
+## Methods and verification
+
+- `tree_risk.py`: direct division-free query, original branch-prefix cross-check, convex allocation and mathematical lower-bound formulas.
+- `cut_baseline.py`: O(nK+L) comparator, where K counts active cuts.
+- `conic_master.py`: native Clarabel QP/SOCP; restored-domain quadratic dual lower bound.
+- `revision_experiments.py`: 4,000 training samples, zero/10 bps simulation comparisons, 18 historical specifications.
+- `revision_inference.py`: paired studentized circular blocks, log variance ratio/excess-return Sharpe, natural bootstrap block-sum SEs; Bartlett original-sample HAC and fixed 21/63/126-day blocks. This is an explicit adaptation, not the full Ledoit–Wolf prewhitening/calibration implementation. Holm adjustment covers 12 tests per block setting. Allocations are not refitted in resamples.
+- `verify.py` and `revision_benchmark.py`: exhaustive/dense cross-checks, conic versus full-scenario SLSQP comparisons, and signed/zero-edge checks.
+- `revision_integrity.py`: independent dollar-trade replay of every historical row.
+- `revision_solver_audit.py`: reconstructs all 17 originally flagged fits using the original root results and pinned original source.
+
+All 53,472 revised allocation fits meet a numerically evaluated normalized global gap at most 2e-7. Clarabel status warnings remain visible; there is no claim of an interval-arithmetic certificate. Requested Clarabel tolerances are 1e-9, refined only if the independent global gap requires it. Tangent LPs retry numerical presolve failures using HiGHS interior point without presolve. The code records all such calls.
+
+Computational figures are generated from actual numerical outputs. No investment recommendation or general performance advantage is claimed. No reuse license has been selected by the authors; no MIT license is asserted for this release.

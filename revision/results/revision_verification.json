@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "reference_trees": 48,
+  "scenarios": 2095,
+  "three_method_dense_checks": 6285,
+  "max_absolute_error": 7.105427357601002e-15,
+  "stability": [
+    {
+      "correlation": 0.0,
+      "direct_dense_max_error": 0.0,
+      "direct_prefix_max_error": 0.0
+    },
+    {
+      "correlation": -0.999999,
+      "direct_dense_max_error": 3.979039320256561e-13,
+      "direct_prefix_max_error": 1.7053025658242404e-13
+    },
+    {
+      "correlation": 0.999999,
+      "direct_dense_max_error": 9.547918011776346e-15,
+      "direct_prefix_max_error": 7.105427357601002e-15
+    }
+  ]
+}

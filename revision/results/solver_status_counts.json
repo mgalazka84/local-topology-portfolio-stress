@@ -1,0 +1,12 @@
+{
+  "history": {
+    "Solved": 22080,
+    "AlmostSolved": 3597,
+    "InsufficientProgress": 152,
+    "NumericalError": 1
+  },
+  "simulation": {
+    "Solved": 50028,
+    "AlmostSolved": 1387
+  }
+}
