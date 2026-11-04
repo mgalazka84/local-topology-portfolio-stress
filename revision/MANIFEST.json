@@ -1,15 +1,15 @@
 {
   "README.md": {
-    "bytes": 4343,
-    "sha256": "03442288cbecc4f39b7ebd215521bddbd41bfbc4d9e5c2acd876f5b371cdf712"
+    "bytes": 5551,
+    "sha256": "efabcf20704d6042357ea3d6ff2be021ee7d8dc9e1e888b96ecfdb027680fca2"
   },
   "REPRODUCIBILITY.txt": {
-    "bytes": 1365,
-    "sha256": "0ee3b216922ae512769f3a718dc25b1d0faf515d1e59cc9723610c87dabc2848"
+    "bytes": 1624,
+    "sha256": "354d118f8cf10bc94b6a5bf3fd986606338719e6e34fec64adc0b02eedfabe95"
   },
   "VERSION": {
     "bytes": 6,
-    "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
+    "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6"
   },
   "data/archived_provenance.json": {
     "bytes": 5770,
@@ -54,6 +54,18 @@
   "results/revision_verification.json": {
     "bytes": 596,
     "sha256": "b8a868ed49a5e49c18363a31dbf84f7223ee04674301168defc1538533404f12"
+  },
+  "results/round2_scoring_verification.json": {
+    "bytes": 2539,
+    "sha256": "a41dca944388ec43a93ee2e147c5c19e9da79daf1b0ae8a95414b50213a619ae"
+  },
+  "results/round2_simulation_paired.csv": {
+    "bytes": 46400,
+    "sha256": "9567746ecff8a3f83f4e93f164048ad87f7cc300e8a865860616e5727c517af1"
+  },
+  "results/round2_simulation_summary.csv": {
+    "bytes": 16853,
+    "sha256": "8a5c614e09f4ffd5686d4c7199eea0e1053dadeb3d22e851ecb99ccc4aab7998"
   },
   "results/simulation_paired.csv": {
     "bytes": 3886,
@@ -104,12 +116,16 @@
     "sha256": "1c6271962a2348feb8f6c8dce21a4e2b5ecb36a31654ab6a4db58ea6392ed3f5"
   },
   "src/revision_report.py": {
-    "bytes": 11016,
-    "sha256": "bdc5c595bf208bb586430993622cd6072412cd80d775ab851cbdc5a02399f2a0"
+    "bytes": 10461,
+    "sha256": "bbf79a7000a700ab6c4ed2823f1f4415c81e0c2820f60ee3d7484943db1ea62d"
   },
   "src/revision_solver_audit.py": {
     "bytes": 5262,
     "sha256": "1a301d8c3f97864ec073b9b72a576f7f60e8802a6ddcabb7778b65a26c39361d"
+  },
+  "src/round2_scoring.py": {
+    "bytes": 7011,
+    "sha256": "4e6279c6b5b4c0ba00b0f9f12fb7a5ad0ae49990cc4f3c4bcfd3c36e1ac3a7c4"
   },
   "src/run_revision.py": {
     "bytes": 1766,

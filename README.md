@@ -1,6 +1,6 @@
 # Local topology stress in tree-based portfolios
 
-The revised computational study is in [revision/](revision/README.md), version **0.2.0**, dated 4 November 2026. It adds cut rerooting, sparse graphs, 500-replication zero-cost comparisons, Clarabel, 49 industries and broader historical sensitivity.
+The revised computational study is in [revision/](revision/README.md), version **0.2.1**, dated 4 November 2026. It includes cut rerooting, sparse graphs, 500-replication zero-cost comparisons, Clarabel, 49 industries and broader historical sensitivity. Round two adds population risk-plus-cost evaluation from the unchanged simulation records and fixes the simulation-figure legend spacing.
 
 - [Reproduction instructions](revision/README.md)
 - [Summary results](revision/results/)

@@ -1,0 +1,71 @@
+{
+  "allocation_records": 48000,
+  "independent_training_samples": 4000,
+  "new_fits": 0,
+  "kappa": 52.5,
+  "cost_penalty": "c*two_way_turnover",
+  "objective_bps": "10000*(52.5*population_variance+c*two_way_turnover)",
+  "max_paired_decomposition_error_bps": 7.105427357601002e-15,
+  "max_population_minimum_consistency_error": 6.844026213814747e-18,
+  "source_sha256": {
+    "sim_12_0.csv": "a47bb40f28a5c05d194737b7adb885e091ddcb5609a8979cdcb83caa9709252b",
+    "sim_12_1.csv": "745d66d84739ecf2cd1699c5bb7edb145cb482c53a19348d7117f6561e0956ea",
+    "sim_12_2.csv": "260f92053b2e2503cb7afa1eaa6bf2bb2f017bdd18921afe8bf4de678b44796e",
+    "sim_12_3.csv": "920d0639791574d47aaf1414756a68642ae581ac94cd9813721726d77d842036",
+    "sim_30_0.csv": "1d430a3cee1c3093bee331015bf5a149f63ed3f2062dfa8d45754b59e34d9e78",
+    "sim_30_1.csv": "9a430f6e1a2166543f0a30078505639f6c3d582475bf2e60edb2d35741d6ee07",
+    "sim_30_2.csv": "e2e4ad33758010c500151eaa6571939a7d3fac67fb0caa845a57be92fac28a4f",
+    "sim_30_3.csv": "1191904f1cc541c55941f3943ef76c19df36c14c4daa18d0bcf021b73e3285a7"
+  },
+  "descriptive_rankings_at_10bps": [
+    {
+      "n": 12,
+      "setting": "Gaussian tree",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Tree"
+    },
+    {
+      "n": 12,
+      "setting": "Student t tree",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Sample"
+    },
+    {
+      "n": 12,
+      "setting": "Structural break",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Tree"
+    },
+    {
+      "n": 12,
+      "setting": "Factor misspecification",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Sample"
+    },
+    {
+      "n": 30,
+      "setting": "Gaussian tree",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Robust"
+    },
+    {
+      "n": 30,
+      "setting": "Student t tree",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Shrinkage"
+    },
+    {
+      "n": 30,
+      "setting": "Structural break",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Robust"
+    },
+    {
+      "n": 30,
+      "setting": "Factor misspecification",
+      "minimum_mean_relative_variance": "Sample",
+      "minimum_mean_population_objective": "Sample"
+    }
+  ],
+  "intervals": "paired t499, unadjusted descriptive Monte Carlo intervals"
+}

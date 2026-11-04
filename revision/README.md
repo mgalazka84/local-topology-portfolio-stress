@@ -1,6 +1,8 @@
-# Local topology stress: revision 0.2.0 (4 November 2026)
+# Local topology stress: revision 0.2.1 (4 November 2026)
 
 This release implements the supplied major-revision assessment. It preserves the negative findings: cut rerooting is faster on all tested complete graphs; the path oracle wins on the tested sparse 4-NN graphs. Robust allocation has higher volatility than linear shrinkage in all reported historical specifications.
+
+Round two evaluates each unchanged simulated allocation with the same population objective, `52.5*population_variance + cost*two_way_turnover`, including Equal and HRP. Sample has the lowest mean relative variance in all eight 10 bps settings, but the lowest mean risk-plus-cost objective in only three (one a near tie with LW). These are descriptive simulation rankings. No additional portfolios or data were fitted.
 
 ## Reproduce the revised study
 
@@ -32,6 +34,8 @@ python src/revision_report.py
 ```
 
 The aggregate `results/simulation.csv` is reconstructed from the eight `sim_n_setting.csv` files. Full recomputation and independent ledger replay require source data and use the complete command sequence above.
+
+The archive is unchanged from version 0.2.0. Round-two derived summaries are in `results/round2_simulation_summary.csv` and paired comparisons in `results/round2_simulation_paired.csv`. `src/round2_scoring.py` regenerates them and manuscript Table 3 directly from the eight archived simulation files; `revision_report.py` invokes the same calculation. `results/round2_scoring_verification.json` records every input hash and the arithmetic checks. Cost penalties and objectives use basis-point units (10,000 times wealth units); the cost term is the target-weight penalty in the decision problem, not the exact self-financing historical fee. Paired intervals are descriptive t499 intervals without multiplicity adjustment. The source records allow every derived score to be reconstructed.
 
 The data download scripts obtain French's 10/30/49 industry and daily risk-free files. This study uses the archived November 2026 hashes in `data/archived_provenance.json`. Newer French downloads can revise history: the download date alone is not a point-in-time data guarantee. Raw downloaded source files are not redistributed here. Cost accounting concerns only allocation across research industry series.
 

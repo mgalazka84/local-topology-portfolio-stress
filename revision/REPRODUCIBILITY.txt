@@ -1,4 +1,4 @@
-Version: 0.2.0
+Version: 0.2.1
 Revision date: 2026-11-04
 Authors: Marek Galazka and Hanna Wdowicka
 Repository: https://github.com/mgalazka84/local-topology-portfolio-stress
@@ -9,6 +9,9 @@ The archive contains recorded replication outputs and historical ledgers.
 SHA-256: c1516c979e6bba92cd70c84f9976310db19fa2a3037bc3ac1b9dd52ec10a2515
 Bytes: 23103343
 The scripts can also regenerate those outputs.
+Round-two scoring uses the same 48,000 allocation-evaluation records, with no new fits.
+The additional summary and paired CSV files are outside the unchanged archive.
+round2_scoring_verification.json records the eight source-file hashes and numerical checks.
 The manuscript and submission bundle identify the exact containing commit.
 No archival DOI has been assigned.
 

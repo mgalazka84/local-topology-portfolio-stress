@@ -37,16 +37,8 @@ def run():
             paired.append({'n':n,'setting':setting,'cost':cost,'comparison':'Robust - '+other,
                 'mean_percent':d.mean(),'paired_se':se,'ci_low':d.mean()-crit*se,'ci_high':d.mean()+crit*se})
     paired=pd.DataFrame(paired);paired.to_csv(RES/'simulation_paired.csv',index=False)
-    rows=[]
-    for cost in [0.,.001]:
-        rows.append([r'\multicolumn{9}{l}{\textit{'+('No trading penalty' if cost==0 else 'Trading penalty: 10 bps')+'}}'])
-        for n in [12,30]:
-            for setting,short in zip(SETTINGS,['Gaussian','Student $t$','Break','Factor']):
-                g=sim[(sim.n==n)&(sim.setting==setting)&(sim.cost==cost)]
-                means=g.groupby('method').relative_population_variance.mean()
-                d=paired[(paired.n==n)&(paired.setting==setting)&(paired.cost==cost)&(paired.comparison=='Robust - Tree')].iloc[0]
-                rows.append([n,short,*[f'{means[m]:.3f}' for m in ['Equal','HRP','Sample','Shrinkage','Tree','Robust']],f'{d.mean_percent:+.3f} ({d.paired_se:.3f})'])
-    table('revision_simulation.tex',['$n$','Model','Equal','HRP','Sample','LW','Tree','Robust',r'$\Delta$ (SE), \%'],rows,'llrrrrrrr')
+    from round2_scoring import build_outputs
+    build_outputs(sim, ROOT)
     fig,axes=plt.subplots(1,2,figsize=(7.2,3.8),sharey=True)
     for ax,cost in zip(axes,[0.,.001]):
         labels=[]
@@ -56,8 +48,12 @@ def run():
                 d=paired[(paired.n==n)&(paired.setting==setting)&(paired.cost==cost)&(paired.comparison=='Robust - '+other)].iloc[0]
                 ax.errorbar(d.mean_percent,i+offset,xerr=[[d.mean_percent-d.ci_low],[d.ci_high-d.mean_percent]],fmt=mark,color=color,capsize=2,markersize=4,label=other if i==0 else None)
         ax.axvline(0,color='black',lw=.7);ax.set_yticks(range(8),labels);ax.invert_yaxis();ax.set_title('No cost penalty' if cost==0 else '10 bps cost penalty');ax.set_xlabel('Robust: paired variance change (%)');ax.grid(axis='x',alpha=.2)
-    fig.legend(*axes[0].get_legend_handles_labels(),loc='lower center',ncol=2,bbox_to_anchor=(.5,-.07),title='Comparison method')
-    fig.tight_layout();fig.savefig(FIG/'simulation_comparison.pdf');plt.close(fig)
+    fig.legend(*axes[0].get_legend_handles_labels(),loc='lower center',ncol=2,bbox_to_anchor=(.5,.005),title='Comparison method')
+    fig.tight_layout(rect=(0,.20,1,1));fig.canvas.draw()
+    legend_box=fig.legends[0].get_window_extent(fig.canvas.get_renderer())
+    for ax in axes:
+        assert not legend_box.overlaps(ax.xaxis.label.get_window_extent(fig.canvas.get_renderer()))
+    fig.savefig(FIG/'simulation_comparison.pdf');plt.close(fig)
     bench=pd.read_csv(RES/'revision_benchmark.csv')
     fig,axes=plt.subplots(1,2,figsize=(7.2,3.5));shapes=['star','balanced','recursive','path'];cols=['#0072B2','#D55E00','#009E73','#CC79A7']
     for ax,graph,title in zip(axes,['complete','knn4'],['Complete graph','Sparse graph (4-NN)']):
@@ -135,6 +131,7 @@ def run():
     (RES/'environment.json').write_text(json.dumps(env,indent=2))
     facts={'solvers':summary,'statuses':statuses,'benchmark_dense_ratio_range':bench[bench.graph=='complete'].cut_over_direct.agg(['min','max']).to_dict(),
         'benchmark_sparse_512_ratio_range':bench[(bench.graph=='knn4')&(bench.n==512)].cut_over_direct.agg(['min','max']).to_dict()}
-    (RES/'revision_facts.json').write_text(json.dumps(facts,indent=2));print(json.dumps(facts,indent=2))
+    (RES/'revision_facts.json').write_text(json.dumps(facts,indent=2))
+    print(json.dumps(facts,indent=2))
 
 if __name__=='__main__':run()
